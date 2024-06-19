@@ -3,13 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.6.33723.286
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClothingWorkshop.Domain", "ClothingWorkshop.Domain\ClothingWorkshop.Domain.csproj", "{6A51EF68-8B0F-45CA-9869-DE8B315BB298}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClothingWorkshop.Domain", "ClothingWorkshop.Domain\ClothingWorkshop.Domain.csproj", "{6A51EF68-8B0F-45CA-9869-DE8B315BB298}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClothingWorkshop.Application", "ClothingWorkshop.Application\ClothingWorkshop.Application.csproj", "{4822B2D1-233B-4CA7-B917-84FD010E1655}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClothingWorkshop.Application", "ClothingWorkshop.Application\ClothingWorkshop.Application.csproj", "{4822B2D1-233B-4CA7-B917-84FD010E1655}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClothingWorkshop.Infrastructure", "ClothingWorkshop.Infrastructure\ClothingWorkshop.Infrastructure.csproj", "{74645DB6-D6AA-46DB-9306-CB53BDB991FB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClothingWorkshop.Infrastructure", "ClothingWorkshop.Infrastructure\ClothingWorkshop.Infrastructure.csproj", "{74645DB6-D6AA-46DB-9306-CB53BDB991FB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClothingWorkshop.API", "ClothingWorkshop.API\ClothingWorkshop.API.csproj", "{C13DACB5-F80B-445C-92D8-AFAAF0C39100}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClothingWorkshop.API", "ClothingWorkshop.API\ClothingWorkshop.API.csproj", "{C13DACB5-F80B-445C-92D8-AFAAF0C39100}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClothingWorkshop.WEB", "ClothingWorkshop.WEB\ClothingWorkshop.WEB.csproj", "{DEFA501C-F4A4-42EB-88D3-29E57478A418}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{C13DACB5-F80B-445C-92D8-AFAAF0C39100}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C13DACB5-F80B-445C-92D8-AFAAF0C39100}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C13DACB5-F80B-445C-92D8-AFAAF0C39100}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DEFA501C-F4A4-42EB-88D3-29E57478A418}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DEFA501C-F4A4-42EB-88D3-29E57478A418}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DEFA501C-F4A4-42EB-88D3-29E57478A418}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DEFA501C-F4A4-42EB-88D3-29E57478A418}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,0 +1,57 @@
+﻿@page "/employees"
+@using ClothingWorkshop.WEB.Models;
+@using ClothingWorkshop.WEB.Services;
+@inject EmployeeService EmployeeService
+
+<h3>EmployeesList</h3>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Nombre</th>
+            <th>Puesto</th>
+            <th>Fecha de Contratación</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (employees != null)
+        {
+            @foreach (var empleado in employees)
+            {
+                <tr>
+                    <td>@empleado.EmployeeId</td>
+                    <td>@empleado.Name</td>
+                    <td>@empleado.Occupation</td>
+                    <td>@empleado.HiringDate.ToString("dd/MM/yyyy")</td>
+                    <td>
+                        <button @onclick="() => EditEmployee(empleado.EmployeeId)" class="btn btn-primary">Editar</button>
+                        <button @onclick="() => DeleteEmployee(empleado.EmployeeId)" class="btn btn-danger">Eliminar</button>
+                    </td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>
+
+@code {
+    private IEnumerable<EmployeeDto> employees;
+
+    protected override async Task OnInitializedAsync()
+    {
+        employees = await EmployeeService.GetEmployeesAsync();
+    }
+
+    private void EditEmployee(int id)
+    {
+        // Redirigir a la página de edición
+        //NavigationManager.NavigateTo($"/editar-empleado/{id}");
+    }
+
+    private async Task DeleteEmployee(int id)
+    {
+        await EmployeeService.DeleteEmployeeAsync(id);
+        employees = await EmployeeService.GetEmployeesAsync();
+    }
+}

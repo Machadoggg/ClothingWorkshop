@@ -1,33 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-//using Microsoft.EntityFrameworkCore;
-using Moq;
-using Xunit;
-using ClothingWorkshop.Application.DTO;
-using ClothingWorkshop.Application.Interfaces;
+﻿using ClothingWorkshop.Application.DTO;
 using ClothingWorkshop.Domain.Entities;
-using ClothingWorkshop.Infrastructure.Repositories;
 using ClothingWorkshop.Infrastructure.Data;
+using ClothingWorkshop.Infrastructure.Repositories;
 using Microsoft.EntityFrameworkCore;
 
-namespace ClothingWorkshop.TEST
+namespace ClothingWorkshop.TEST.Services
 {
-    public class EmployeeServiceTests
+    public class GetAllEmployees
     {
         private readonly DbContextOptions<ApplicationDbContext> _dbContextOptions;
 
-        public EmployeeServiceTests()
+        public GetAllEmployees()
         {
-            // Configura la base de datos en memoria
+            // Configure DB in memory
             _dbContextOptions = new DbContextOptionsBuilder<ApplicationDbContext>()
-                .UseInMemoryDatabase(databaseName: "ClothingWorkshopTest")
+                .UseInMemoryDatabase(databaseName: "ClothingWorkshopTest_GetAllEmployees")
                 .Options;
         }
 

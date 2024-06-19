@@ -1,9 +1,7 @@
 ﻿using ClothingWorkshop.Application.DTO;
-using ClothingWorkshop.Domain.Entities;
 using ClothingWorkshop.Infrastructure.Data;
 using ClothingWorkshop.Infrastructure.Repositories;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Infrastructure;
 
 namespace ClothingWorkshop.TEST.Services
 {

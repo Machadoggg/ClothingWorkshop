@@ -40,17 +40,6 @@ namespace ClothingWorkshop.Infrastructure.Repositories
         }
 
 
-        public async Task DeleteEmployeeAsync(int id)
-        {
-            var employee = await _context.Employees.FindAsync(id);
-            if (employee == null) return;
-
-            _context.Employees.Remove(employee);
-            await _context.SaveChangesAsync();
-        }
-
-
-
         public async Task<EmployeeDto> GetEmployeeByIdAsync(int id)
         {
             var empleado = await _context.Employees.FindAsync(id);
@@ -73,6 +62,16 @@ namespace ClothingWorkshop.Infrastructure.Repositories
             employee.Occupation = employeeDto.Occupation;
 
             _context.Employees.Update(employee);
+            await _context.SaveChangesAsync();
+        }
+
+
+        public async Task DeleteEmployeeAsync(int id)
+        {
+            var employee = await _context.Employees.FindAsync(id);
+            if (employee == null) return;
+
+            _context.Employees.Remove(employee);
             await _context.SaveChangesAsync();
         }
     }

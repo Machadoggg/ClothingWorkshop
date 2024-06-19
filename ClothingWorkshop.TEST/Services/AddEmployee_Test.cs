@@ -5,11 +5,11 @@ using Microsoft.EntityFrameworkCore;
 
 namespace ClothingWorkshop.TEST.Services
 {
-    public class AddEmployee
+    public class AddEmployee_Test
     {
         private DbContextOptions<ApplicationDbContext> _dbContextOptions;
 
-        public AddEmployee()
+        public AddEmployee_Test()
         {
             _dbContextOptions = new DbContextOptionsBuilder<ApplicationDbContext>()
                 .UseInMemoryDatabase(databaseName: "ClothingWorkshopTest_AddEmployee")

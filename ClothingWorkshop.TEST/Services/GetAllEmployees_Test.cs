@@ -6,11 +6,11 @@ using Microsoft.EntityFrameworkCore;
 
 namespace ClothingWorkshop.TEST.Services
 {
-    public class GetAllEmployees
+    public class GetAllEmployees_Test
     {
         private readonly DbContextOptions<ApplicationDbContext> _dbContextOptions;
 
-        public GetAllEmployees()
+        public GetAllEmployees_Test()
         {
             // Configure DB in memory
             _dbContextOptions = new DbContextOptionsBuilder<ApplicationDbContext>()

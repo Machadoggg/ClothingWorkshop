@@ -5,11 +5,11 @@ using Microsoft.EntityFrameworkCore;
 
 namespace ClothingWorkshop.TEST.Services
 {
-    public class GetEmployeeById
+    public class GetEmployeeById_Test
     {
         private readonly DbContextOptions<ApplicationDbContext> _dbContextOptions;
 
-        public GetEmployeeById()
+        public GetEmployeeById_Test()
         {
             _dbContextOptions = new DbContextOptionsBuilder<ApplicationDbContext>()
                 .UseInMemoryDatabase(databaseName: "ClothingWorkshopTest_GetEmployeeById")

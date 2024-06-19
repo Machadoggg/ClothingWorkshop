@@ -13,6 +13,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClothingWorkshop.API", "Clo
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClothingWorkshop.WEB", "ClothingWorkshop.WEB\ClothingWorkshop.WEB.csproj", "{DEFA501C-F4A4-42EB-88D3-29E57478A418}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClothingWorkshop.TEST", "ClothingWorkshop.TEST\ClothingWorkshop.TEST.csproj", "{B48F7BAC-1285-47A2-9F33-F607EDF8EDB1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{DEFA501C-F4A4-42EB-88D3-29E57478A418}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DEFA501C-F4A4-42EB-88D3-29E57478A418}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DEFA501C-F4A4-42EB-88D3-29E57478A418}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B48F7BAC-1285-47A2-9F33-F607EDF8EDB1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B48F7BAC-1285-47A2-9F33-F607EDF8EDB1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B48F7BAC-1285-47A2-9F33-F607EDF8EDB1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B48F7BAC-1285-47A2-9F33-F607EDF8EDB1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

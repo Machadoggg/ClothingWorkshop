@@ -2,11 +2,6 @@
 @inherits OwningComponentBase<EmployeeService>
 @inject NavigationManager Navigation
 
-
-@*@inject EmployeesService EmployeeService*@
-
-
-
 @if (isVisible)
 {
     <div class="modal fade show d-block" tabindex="-1" role="dialog">
@@ -14,9 +9,6 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title">Create Employee</h5>
-                    <button type="button" class="close" @onclick="CloseModal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
                 </div>
                 <div class="modal-body">
 
@@ -44,10 +36,10 @@
     </div>
 }
 @code {
-        [Parameter]
-        public EventCallback OnEmployeeAdded { get; set; }
+    [Parameter]
+    public EventCallback OnEmployeeAdded { get; set; }
 
-        private Models.EmployeeDto newEmployee = new Models.EmployeeDto();
+    private Models.EmployeeDto newEmployee = new Models.EmployeeDto();
 
 
 
@@ -67,16 +59,17 @@
 
 
 
-        private async Task HandleValidSubmit()
-        {
-            await Service.AddEmployeeAsync(newEmployee);
-            await OnEmployeeAdded.InvokeAsync();
-            CloseModal();
-        }
+    private async Task HandleValidSubmit()
+    {
+        await Service.AddEmployeeAsync(newEmployee);
+        await OnEmployeeAdded.InvokeAsync();
+        CloseModal();
+    }
 
-        private void CloseModal()
-        {
-            Navigation.NavigateTo(Navigation.Uri, forceLoad: true);
-        }
+    private void CloseModal()
+    {
+        isVisible = false;
+        StateHasChanged();
+    }
 }
 

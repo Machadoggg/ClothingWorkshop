@@ -37,8 +37,8 @@ else
                         <td>@employee.Name</td>
                         <td>@employee.Occupation</td>
                         <td>
-                            <a href="/Employees/Edit/@employee.EmployeeId">Edit</a> |
-                            <a href="/employees/delete/@employee.EmployeeId">Delete</a>
+                            <button class="btn btn-secondary" @onclick="() => EditEmployee(employee.EmployeeId)">Edit</button>
+                            <button class="btn btn-danger" @onclick="() => DeleteEmployee(employee.EmployeeId)">Delete</button>
                         </td>
                     </tr>
                 }
@@ -73,6 +73,17 @@ else
     private void OpenCreateEmployeeModal()
     {
         createEmployeeModal.Show();
+    }
+
+
+    private void EditEmployee(int employeeId)
+    {
+        Navigation.NavigateTo($"/employees/edit/{employeeId}");
+    }
+
+    private async Task DeleteEmployee(int employeeId)
+    {
+        Navigation.NavigateTo($"/employees/delete/{employeeId}");
     }
 
 }

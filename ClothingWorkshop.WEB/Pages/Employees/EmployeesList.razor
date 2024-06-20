@@ -38,9 +38,6 @@ else
                         <td>
                             <a href="/Employees/Edit/@employee.EmployeeId">Edit</a> |
                             <a href="/employees/delete/@employee.EmployeeId">Delete</a>
-
-                            @*<button @onclick="() => EditEmployee(employee.EmployeeId)" class="btn btn-primary">Editar</button>
-                            <button @onclick="() => DeleteEmployee(employee.EmployeeId)" class="btn btn-danger">Eliminar</button>*@
                         </td>
                     </tr>
                 }
@@ -53,18 +50,6 @@ else
 
     protected override async Task OnInitializedAsync()
     {
-        employees = await EmployeeService.GetEmployeesAsync();
-    }
-
-    private void EditEmployee(int id)
-    {
-        // Redirigir a la página de edición
-        //NavigationManager.NavigateTo($"/editar-empleado/{id}");
-    }
-
-    private async Task DeleteEmployee(int id)
-    {
-        await EmployeeService.DeleteEmployeeAsync(id);
         employees = await EmployeeService.GetEmployeesAsync();
     }
 }

@@ -1,0 +1,70 @@
+﻿@page "/employees"
+@using ClothingWorkshop.WEB.Models;
+@using ClothingWorkshop.WEB.Services;
+@inject EmployeeService EmployeeService
+@inject NavigationManager Navigation
+
+<h3>EmployeesList</h3>
+
+<p>
+    <a href="/Employees/Create">Create New Employee</a>
+</p>
+
+@if (employees == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nombre</th>
+                <th>Puesto</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (employees != null)
+            {
+                @foreach (var employee in employees)
+                {
+                    <tr>
+                        <td>@employee.EmployeeId</td>
+                        <td>@employee.Name</td>
+                        <td>@employee.Occupation</td>
+                        <td>
+                            <a href="/Employees/Edit/@employee.EmployeeId">Edit</a> |
+                            <a href="/employees/delete/@employee.EmployeeId">Delete</a>
+
+                            @*<button @onclick="() => EditEmployee(employee.EmployeeId)" class="btn btn-primary">Editar</button>
+                            <button @onclick="() => DeleteEmployee(employee.EmployeeId)" class="btn btn-danger">Eliminar</button>*@
+                        </td>
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+}
+@code {
+    private IEnumerable<EmployeeDto> employees;
+
+    protected override async Task OnInitializedAsync()
+    {
+        employees = await EmployeeService.GetEmployeesAsync();
+    }
+
+    private void EditEmployee(int id)
+    {
+        // Redirigir a la página de edición
+        //NavigationManager.NavigateTo($"/editar-empleado/{id}");
+    }
+
+    private async Task DeleteEmployee(int id)
+    {
+        await EmployeeService.DeleteEmployeeAsync(id);
+        employees = await EmployeeService.GetEmployeesAsync();
+    }
+}

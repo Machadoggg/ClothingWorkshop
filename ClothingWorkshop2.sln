@@ -13,7 +13,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClothingWorkshop.API", "Clo
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClothingWorkshop.WEB", "ClothingWorkshop.WEB\ClothingWorkshop.WEB.csproj", "{DEFA501C-F4A4-42EB-88D3-29E57478A418}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClothingWorkshop.TEST", "ClothingWorkshop.TEST\ClothingWorkshop.TEST.csproj", "{B48F7BAC-1285-47A2-9F33-F607EDF8EDB1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClothingWorkshop.TEST", "ClothingWorkshop.TEST\ClothingWorkshop.TEST.csproj", "{B48F7BAC-1285-47A2-9F33-F607EDF8EDB1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

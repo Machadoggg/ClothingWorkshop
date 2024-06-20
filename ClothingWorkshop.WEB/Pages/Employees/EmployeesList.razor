@@ -1,4 +1,5 @@
 ﻿@page "/employees"
+@using ClothingWorkshop.WEB.Components;
 @using ClothingWorkshop.WEB.Models;
 @using ClothingWorkshop.WEB.Services;
 @inject EmployeeService EmployeeService
@@ -7,7 +8,7 @@
 <h3>EmployeesList</h3>
 
 <p>
-    <a href="/Employees/Create">Create New Employee</a>
+    <button class="btn btn-primary" @onclick="OpenCreateEmployeeModal">Create New Employee</button>
 </p>
 
 @if (employees == null)
@@ -45,11 +46,33 @@ else
         </tbody>
     </table>
 }
+
+<CreateEmployeeModal @ref="createEmployeeModal" OnEmployeeAdded="ReloadEmployees" />
+
 @code {
     private IEnumerable<EmployeeDto> employees;
+    private CreateEmployeeModal createEmployeeModal;
+
 
     protected override async Task OnInitializedAsync()
     {
+        await LoadEmployees();
+    }
+
+    private async Task LoadEmployees()
+    {
         employees = await EmployeeService.GetEmployeesAsync();
     }
+
+    private async Task ReloadEmployees()
+    {
+        await LoadEmployees();
+        StateHasChanged();
+    }
+
+    private void OpenCreateEmployeeModal()
+    {
+        createEmployeeModal.Show();
+    }
+
 }
